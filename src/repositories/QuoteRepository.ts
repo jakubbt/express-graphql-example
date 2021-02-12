@@ -12,10 +12,16 @@ export interface CountParameters {
   query?: string;
 }
 
+export interface CreateParameters {
+  quote: string;
+}
+
 export default interface AuthorRepository {
   get(id: number): Promise<Quote>;
 
   find(params: FindParameters): Promise<Quote[]>;
 
   count(params: CountParameters): Promise<number>;
+
+  create(params: CreateParameters): Promise<Quote>;
 }
